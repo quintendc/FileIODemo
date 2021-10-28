@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -25,9 +27,28 @@ namespace WpfGetFilesDemo
             InitializeComponent();
         }
 
+        string path = "";
+
         private void btnOpenDirectory_Click(object sender, RoutedEventArgs e)
         {
+            var dialog = new FolderBrowserDialog();
+            dialog.ShowDialog();
 
+            path = dialog.SelectedPath;
+            lblPath.Content = path;
+
+            ListFiles();
+        }
+
+        private void ListFiles()
+        {
+            if (!string.IsNullOrEmpty(path))
+            {
+                foreach (var file in Directory.GetFiles(path))
+                {
+                    lstFiles.Items.Add(file);
+                }
+            }
         }
     }
 }
