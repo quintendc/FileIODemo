@@ -24,5 +24,10 @@ namespace WpfGetFilesDemo
         {
             InitializeComponent();
         }
+
+        private void btnOpenDirectory_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
