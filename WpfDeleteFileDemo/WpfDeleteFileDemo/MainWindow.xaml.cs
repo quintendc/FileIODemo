@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,14 +27,27 @@ namespace WpfDeleteFileDemo
             InitializeComponent();
         }
 
+        string path = "";
+
         private void btnSelectFile_Click(object sender, RoutedEventArgs e)
         {
+            var dialog = new OpenFileDialog();
+            dialog.ShowDialog();
 
+            path = dialog.FileName;
+            lblFile.Content = path;
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
+            else
+            {
+                MessageBox.Show("File can't be found!");
+            }
         }
     }
 }
