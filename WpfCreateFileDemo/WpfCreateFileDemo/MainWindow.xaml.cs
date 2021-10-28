@@ -24,5 +24,15 @@ namespace WpfCreateFileDemo
         {
             InitializeComponent();
         }
+
+        private void btnSelectPath_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCreateFile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
