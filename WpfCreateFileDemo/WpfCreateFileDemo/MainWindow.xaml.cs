@@ -45,7 +45,7 @@ namespace WpfCreateFileDemo
             {
                 if (!File.Exists(path + $@"\\{txtFileName.Text}{txtFileExtension.Text}"))
                 {
-                    string file = path + "\\" + txtFileName.Text + txtFileExtension.Text;
+                    string file = path + @"\\" + txtFileName.Text + txtFileExtension.Text;
                     FileStream stream = new FileStream(file, FileMode.Create);
                 }
                 else
