@@ -24,5 +24,15 @@ namespace WpfDeleteFileDemo
         {
             InitializeComponent();
         }
+
+        private void btnSelectFile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
